@@ -16,6 +16,7 @@
     <div class="item-input-container">
         <select class="item-input" [(ngModel)]="item.dayTime">
             <option value="">at what time it was?</option>
+            <option value="on wakeup">on wakeup</option>
             <option value="day">day</option>
             <option value="night">night</option>
             <option value="morning">morning</option>
@@ -30,11 +31,20 @@
         </select>
     </div>
     <div class="item-input-container">
-        <select class="item-input" [(ngModel)]="item.temperature">
-            <option value="">temperature?</option>
+        <select class="item-input" [(ngModel)]="item.additionalPill">
+            <option value="">did you take additional pills?</option>
+            <option value="citramone">citramone</option>
+            <option value="nurofen">nurofen</option>
+            <option value="paracetamol">paracetamol</option>
+        </select>
+    </div>
+    <div class="item-input-container">
+        <select class="item-input" [(ngModel)]="item.weather">
+            <option value="">what was weather?</option>
             <option value="hot">hot</option>
             <option value="cold">cold</option>
             <option value="comfortable">comfortable</option>
+            <option value="rain">rain</option>
         </select>
     </div>
     <div class="item-input-container">
@@ -53,27 +63,31 @@
     </div>
     <div class="item-input-container additional-options">
         <div>
-            
             <input type="checkbox" value="yes" id="nightTraweling" [(ngModel)]="item.nightTraweling" />
             <label for="nightTraweling">night traveling</label>
         </div>
         <div>
-            
-            <input type="checkbox" value="yes" id="noBrackfast" [(ngModel)]="item.noBrackfast" />
-            <label for="noBrackfast">no brackfast</label>
+            <input type="checkbox" value="yes" id="noBreackfast" [(ngModel)]="item.noBreackfast" />
+            <label for="noBreackfast">no breackfast</label>
         </div>
         <div>
-            
             <input type="checkbox" value="yes" id="stress" [(ngModel)]="item.stress"/>
             <label for="stress">stress</label>
         </div>
         <div>
-            
             <input type="checkbox" value="yes" id="flu" [(ngModel)]="item.flu"/>
             <label for="flu">flu</label>
         </div>
+        <div>
+            <input type="checkbox" value="yes" id="backHeadPain" [(ngModel)]="item.backHeadPain"/>
+            <label for="bachHeadPain">back head pain</label>
+        </div>
+        <div>
+            <input type="checkbox" value="yes" id="neckPain" [(ngModel)]="item.neckPain"/>
+            <label for="neckPain">neck pain</label>
+        </div>
     </div>
-    <div>
+    <div class="buttons">
         <button (click)="onSave()">save</button>
         <button routerLink="/records">cancel</button>
     </div>

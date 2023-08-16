@@ -6,6 +6,7 @@
 
 .container {
     padding: 15px;
+    overflow: auto;
     
 }
 
@@ -33,4 +34,14 @@
 .loading {
     text-align: center;
     margin: 50px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons > button {
+    height: 50px;
+    width: 40%;
 }

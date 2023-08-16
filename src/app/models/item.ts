@@ -3,13 +3,16 @@ export class Item {
     alcohole: string = "";
     dayTime: string  = "";
     pillsWorkFast: string = "";
-    temperature: string  = "";
+    weather: string  = "";
     howManyPills: string = "";
     cycleDay: string = "";
     nightTraweling: string = "";
-    noBrackfast: string = "";
+    noBreackfast: string = "";
     stress: string = "";
     flu: string = "";
+    additionalPill: string = "";
+    backHeadPain: string = "";
+    neckPain: string = "";
 
     constructor(date: Date) {
         this.date = date;
@@ -26,8 +29,8 @@ export class Item {
         if (this.nightTraweling) {
             parts.push("Night traweling");
         }
-        if (this.noBrackfast) {
-            parts.push("No brackfast");
+        if (this.noBreackfast) {
+            parts.push("No breackfast");
         }
         if (this.stress) {
             parts.push("Stress");
@@ -38,14 +41,23 @@ export class Item {
         if (this.dayTime) {
             parts.push("Day time: " + this.dayTime);
         }
-        if (this.temperature) {
-            parts.push("Temp: " + this.temperature);
+        if (this.weather) {
+            parts.push("Weather: " + this.weather);
         }
         if (this.howManyPills) {
             parts.push("Pills: "+this.howManyPills);
         }
         if (this.cycleDay) {
             parts.push("Cycle day: " +this.cycleDay);
+        }
+        if (this.additionalPill) {
+            parts.push("Additional pills: " +this.additionalPill);
+        }
+        if (this.backHeadPain) {
+            parts.push("Back head pain");
+        }
+        if (this.neckPain) {
+            parts.push("Neck pain");
         }
 
         return parts;
@@ -60,13 +72,17 @@ export class Item {
         item.alcohole = obj.alcohole;
         item.dayTime = obj.dayTime;
         item.pillsWorkFast = obj.pillsWorkFast;
-        item.temperature = obj.temperature;
+        item.weather = obj.weather;
         item.howManyPills = obj.howManyPills;
         item.cycleDay = obj.cycleDay;
         item.nightTraweling = obj.nightTraweling;
-        item.noBrackfast = obj.noBrackfast;
+        item.noBreackfast = obj.noBreackfast;
         item.stress = obj.stress;
         item.flu = obj.flu;
+        item.additionalPill = obj.additionalPill;
+        item.backHeadPain = obj.backHeadPain;
+        item.neckPain = obj.neckPain;
+
         return item;
     }
 }

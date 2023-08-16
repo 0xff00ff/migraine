@@ -5,10 +5,10 @@
   <div class="body">
     <router-outlet></router-outlet>
   </div>
-  <div class="add-button">
-    <mat-icon fontIcon="add-circle" routerLink="/add"></mat-icon>
-  </div>
   <div class="footer">
+    <div routerLink="/add" (click)="page = 'add'" [className]="page == 'add' ? 'active' : ''">
+      <mat-icon fontIcon="add_circle"></mat-icon>
+  </div>
     <div routerLink="" (click)="page = ''" [className]="page == '' ? 'active' : ''">
         <mat-icon fontIcon="dashboard"></mat-icon>
     </div>
