@@ -1,0 +1,39 @@
+::host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container {
+    margin: 5px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    margin-bottom: 15px;
+}
+
+.stat > div {
+    margin-right: 10px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: auto;
+    flex-grow: 2;
+}
+
+.list > div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}

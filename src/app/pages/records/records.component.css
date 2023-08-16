@@ -1,0 +1,40 @@
+::host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
+}
+
+.container > * {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+    gap: 10px;
+}
+
+.date {
+    width: 50px;
+}
+
+.buttons {
+    width: 110px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tags {
+    display: flex;
+    gap: 2px;
+    flex-wrap: wrap;
+}
+
+.tags > span:not(:last-child):after {
+    content: ',';
+}

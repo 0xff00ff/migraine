@@ -1,0 +1,80 @@
+<div class="loading" *ngIf="loading">
+    Loading ...<br>
+    <a routerLink="/records">Back to list</a>
+</div>
+<div class="container" *ngIf="!loading">
+    <div class="item-input-container">
+        <input type="date" date class="item-input" [value]="item.date | date:'yyyy-MM-dd'" (input)="item.date = parseDate($event)">
+    </div>
+    <div class="item-input-container">
+        <select class="item-input" [(ngModel)]="item.alcohole">
+            <option value="">did you drink alcohole?</option>
+            <option value="yes">yes</option>
+            <option value="no">no</option>
+        </select>
+    </div>
+    <div class="item-input-container">
+        <select class="item-input" [(ngModel)]="item.dayTime">
+            <option value="">at what time it was?</option>
+            <option value="day">day</option>
+            <option value="night">night</option>
+            <option value="morning">morning</option>
+            <option value="evening">evening</option>
+        </select>
+    </div>
+    <div class="item-input-container">
+        <select class="item-input" [(ngModel)]="item.pillsWorkFast">
+            <option value="">did pills work fast?</option>
+            <option value="yes">yes</option>
+            <option value="no">no</option>
+        </select>
+    </div>
+    <div class="item-input-container">
+        <select class="item-input" [(ngModel)]="item.temperature">
+            <option value="">temperature?</option>
+            <option value="hot">hot</option>
+            <option value="cold">cold</option>
+            <option value="comfortable">comfortable</option>
+        </select>
+    </div>
+    <div class="item-input-container">
+        <select class="item-input" [(ngModel)]="item.howManyPills">
+            <option value="">how many pills did you got?</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    <div class="item-input-container">
+        <select class="item-input" [(ngModel)]="item.cycleDay">
+            <option value="" selected>cycle day?</option>
+            <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28]" [value]="i">{{i}}</option>
+        </select>
+    </div>
+    <div class="item-input-container additional-options">
+        <div>
+            
+            <input type="checkbox" value="yes" id="nightTraweling" [(ngModel)]="item.nightTraweling" />
+            <label for="nightTraweling">night traveling</label>
+        </div>
+        <div>
+            
+            <input type="checkbox" value="yes" id="noBrackfast" [(ngModel)]="item.noBrackfast" />
+            <label for="noBrackfast">no brackfast</label>
+        </div>
+        <div>
+            
+            <input type="checkbox" value="yes" id="stress" [(ngModel)]="item.stress"/>
+            <label for="stress">stress</label>
+        </div>
+        <div>
+            
+            <input type="checkbox" value="yes" id="flu" [(ngModel)]="item.flu"/>
+            <label for="flu">flu</label>
+        </div>
+    </div>
+    <div>
+        <button (click)="onSave()">save</button>
+        <button routerLink="/records">cancel</button>
+    </div>
+</div>
