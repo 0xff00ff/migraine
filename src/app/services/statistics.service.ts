@@ -24,19 +24,26 @@ export class StatisticsService {
   }
 
   generateStat(items: Item[]) {
-    this.shortStat.totalItems = items.length;
+    const shortStat = {
+      totalItems: 0,
+      totalPerWeek: 0,
+      totalPerMonth: 0,
+      totalPerYear: 0,
+    }
+    shortStat.totalItems = items.length;
     const d = new Date();
     items.forEach((item) => {
       if (d.getDay() == item.date.getDay()) {
-        this.shortStat.totalPerWeek++;
+        shortStat.totalPerWeek++;
       }
       if (d.getMonth() == item.date.getMonth()) {
-        this.shortStat.totalPerMonth++;
+        shortStat.totalPerMonth++;
       }
       if (d.getFullYear() == item.date.getFullYear()) {
-        this.shortStat.totalPerYear++;
+        shortStat.totalPerYear++;
       }
     })
+    this.shortStat = shortStat;
     this.streamShort.next(this.shortStat);
   }
 

@@ -7,7 +7,7 @@ export class Item {
     howManyPills: string = "";
     cycleDay: string = "";
     nightTraweling: string = "";
-    noBreackfast: string = "";
+    noBreakfast: string = "";
     stress: string = "";
     flu: string = "";
     additionalPill: string = "";
@@ -29,7 +29,7 @@ export class Item {
         if (this.nightTraweling) {
             parts.push("Night traweling");
         }
-        if (this.noBreackfast) {
+        if (this.noBreakfast) {
             parts.push("No breackfast");
         }
         if (this.stress) {
@@ -76,7 +76,7 @@ export class Item {
         item.howManyPills = obj.howManyPills;
         item.cycleDay = obj.cycleDay;
         item.nightTraweling = obj.nightTraweling;
-        item.noBreackfast = obj.noBreackfast;
+        item.noBreakfast = obj.noBreakfast;
         item.stress = obj.stress;
         item.flu = obj.flu;
         item.additionalPill = obj.additionalPill;
