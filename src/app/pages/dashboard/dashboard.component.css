@@ -33,7 +33,22 @@
 .list > div {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     margin-bottom: 10px;
+}
+
+.tags {
+    display: flex;
+    gap: 2px;
+    flex-wrap: wrap;
+    margin-left: 15px;
+}
+
+.tags > span:not(:last-child):after {
+    content: ',';
+}
+
+.date {
+    background-color: #e7e7ff;
 }

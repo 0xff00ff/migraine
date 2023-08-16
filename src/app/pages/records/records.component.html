@@ -1,10 +1,12 @@
 <div class="container">
     <div *ngFor="let item of items; let i = index">
-        <div class="date">{{item.date.getMonth()+1}}/{{item.date.getDate()}}</div>
-        <div class="tags"><span *ngFor="let tag of item.tags()">{{tag}}</span></div>
-        <div class="buttons">
-            <mat-icon style="cursor: pointer;" routerLink="/edit/{{i}}">edit</mat-icon>
-            <mat-icon style="color: red; cursor: pointer;" (click)="onDelete(i)">delete</mat-icon>
+        <div class="date">
+            <div>{{item.date.getMonth()+1}}/{{item.date.getDate()}}/{{item.date.getFullYear()}}</div>
+            <div class="buttons">
+                <mat-icon style="cursor: pointer;" routerLink="/edit/{{i}}">edit</mat-icon>
+                <mat-icon style="color: red; cursor: pointer;" (click)="onDelete(i)">delete</mat-icon>
+            </div>
         </div>
+        <div class="tags"><span *ngFor="let tag of item.tags()">{{tag}}</span></div>
     </div>
 </div>

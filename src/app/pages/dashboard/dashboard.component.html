@@ -1,38 +1,16 @@
 <div class="container">
     <div class="stat">
-        <div>Last week: 3</div>
-        <div>Last month: 12</div>
-        <div>Last year: 123</div>
-        <div>Avg: 3/week</div>
+        <div>Total: {{stat.totalItems}}</div>
+        <div>Last week: {{stat.totalPerWeek}}</div>
+        <div>Last month: {{stat.totalPerMonth}}</div>
+        <div>Last year: {{stat.totalPerYear}}</div>
     </div>
     <div class="list">
-        <div>
-            <div>23/06</div>
-            <div>Day, Alcohole, Pills work fast</div>
-        </div>
-        <div>
-            <div>23/06</div>
-            <div>Day, Alcohole, Pills work fast</div>
-        </div>
-        <div>
-            <div>23/06</div>
-            <div>Day, Alcohole, Pills work fast</div>
-        </div>
-        <div>
-            <div>23/06</div>
-            <div>Day, Alcohole, Pills work fast</div>
-        </div>
-        <div>
-            <div>23/06</div>
-            <div>Day, Alcohole, Pills work fast</div>
-        </div>
-        <div>
-            <div>23/06</div>
-            <div>Day, Alcohole, Pills work fast</div>
-        </div>
-        <div>
-            <div>23/06</div>
-            <div>Day, Alcohole, Pills work fast</div>
+        <div *ngFor="let item of items">
+            <div class="date">{{item.date.getMonth()+1}}/{{item.date.getDate()}}/{{item.date.getFullYear()}}</div>
+            <div class="tags">
+                <span *ngFor="let tag of item.tags()">{{tag}}</span>
+            </div>
         </div>
     </div>
 </div>
