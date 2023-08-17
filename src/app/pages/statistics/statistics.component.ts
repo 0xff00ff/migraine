@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationService, Pages } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-statistics',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class StatisticsComponent {
 
+  constructor(private navService:NavigationService) { }
+
+  ngOnInit() {
+    this.navService.setPage(Pages.Statistics);
+  }
 }

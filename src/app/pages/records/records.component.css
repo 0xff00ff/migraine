@@ -21,12 +21,20 @@
 
 .date {
     width: 50px;
+    font-size: 30px;
 }
 
 .buttons {
     width: 110px;
     display: flex;
     justify-content: flex-end;
+}
+
+.buttons > * {
+    font-size: 30px;
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
 }
 
 .tags {

@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from 'src/app/models/item';
 import { ItemsService } from 'src/app/services/items.service';
+import { NavigationService, Pages } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-item',
@@ -15,19 +16,26 @@ export class ItemComponent {
   type = 'add';
   id = 0;
 
-  constructor(private itemsService: ItemsService, private router: Router, private route:ActivatedRoute) {
+  constructor(private itemsService: ItemsService, 
+    private router: Router, 
+    private route:ActivatedRoute, private navService: NavigationService) {
     console.log(this.item)
    }
 
    ngOnInit() {
     this.type = this.route.snapshot.data['type'];
     this.id = this.route.snapshot.params['id'];
+
+    
+
     if (this.type == 'edit') {
+      this.navService.setPage(Pages.Edit);
       this.itemsService.getOne(this.id).subscribe((item) => {
         this.item = item;
         this.loading = false;
       })
     } else {
+      this.navService.setPage(Pages.Add);
       this.loading = false;
     }
    }

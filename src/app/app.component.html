@@ -1,21 +1,21 @@
 <div class="container">
   <div class="header">
-    Migraine Tracker
+    <div>Migraine Tracker</div>
   </div>
   <div class="body">
     <router-outlet></router-outlet>
   </div>
   <div class="footer">
-    <div routerLink="/add" (click)="page = 'add'" [className]="page == 'add' ? 'active' : ''">
+    <div routerLink="/add" [className]="page == pages.Add ? 'active' : ''">
       <mat-icon fontIcon="add_circle"></mat-icon>
   </div>
-    <div routerLink="" (click)="page = ''" [className]="page == '' ? 'active' : ''">
+    <div routerLink="" [className]='page == pages.Dashboard ? "active": ""'>
         <mat-icon fontIcon="dashboard"></mat-icon>
     </div>
-    <div routerLink="/records" (click)="page = 'records'" [className]="page == 'records' ? 'active' : ''">
+    <div routerLink="/records" [className]="page == pages.Records ? 'active' : ''">
         <mat-icon  fontIcon="list_alt"></mat-icon>
     </div>
-    <div routerLink="/statistics" (click)="page = 'statistics'" [className]="page == 'statistics' ? 'active' : ''">
+    <div routerLink="/statistics" [className]="page == pages.Statistics ? 'active' : ''">
         <mat-icon fontIcon="equalizer"></mat-icon>
     </div>
   </div>
