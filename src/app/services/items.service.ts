@@ -8,10 +8,6 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 export class ItemsService {
 
   items: Item[] = [
-    Item.empty(),
-    Item.empty(),
-    Item.empty(),
-    new Item(new Date())
   ];
   stream: BehaviorSubject<Item[]> = new BehaviorSubject(this.items);
 
