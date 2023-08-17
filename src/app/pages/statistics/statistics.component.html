@@ -1,1 +1,9 @@
-<p>statistics works!</p>
+<div style="margin: 10px;">
+    <div>Most frequent symptoms:</div>
+    <div style="margin: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div *ngFor="let item of statistics | keyvalue" style=" display: flex; flex-direction: row; justify-content: space-between;">
+            <span>{{item.key}}</span><span>{{item.value}}</span>
+        </div>
+    </div>
+
+</div>
