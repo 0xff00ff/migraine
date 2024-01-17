@@ -21,10 +21,10 @@ export class Item {
     tags(): string[] {
         const parts = []
         if (this.alcohole) {
-            parts.push("Alcohol");
+            parts.push("Alcohol: "+this.alcohole);
         }
         if (this.pillsWorkFast) {
-            parts.push("Pills work fast");
+            parts.push("Pills work fast: "+ this.pillsWorkFast);
         }
         if (this.nightTraweling) {
             parts.push("Night traweling");
